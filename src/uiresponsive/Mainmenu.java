@@ -43,7 +43,6 @@ public class Mainmenu extends javax.swing.JFrame {
         
         initComponents();
         openpdf("D:\\Skripsiku\\BAB III.pdf");
-        treelist("D:\\reetrax-git\\reetrax-server\\contents\\Xiaomi");
     }
 
     /**
@@ -134,7 +133,7 @@ public class Mainmenu extends javax.swing.JFrame {
 
         getContentPane().add(Header, java.awt.BorderLayout.PAGE_START);
 
-        menu.setPreferredSize(new java.awt.Dimension(270, 450));
+        menu.setPreferredSize(new java.awt.Dimension(50, 450));
         menu.setLayout(new java.awt.BorderLayout());
 
         MenuIcon.setBackground(new java.awt.Color(5, 10, 46));
@@ -245,11 +244,7 @@ public class Mainmenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public void treelist(String folderfile){
-        DefaultMutableTreeNode root;
-        root = new DefaultMutableTreeNode();
-        getList(root, new File(folderfile));
         
-        jTree1.setModel(new DefaultTreeModel(root));
     }
     
     public void openpdf (String file){
@@ -426,23 +421,4 @@ public class Mainmenu extends javax.swing.JFrame {
     private javax.swing.JPanel setting;
     // End of variables declaration//GEN-END:variables
 
-    private void getList(DefaultMutableTreeNode node, File f) {
-       if(!f.isDirectory()){
-           f.getName().split("/");
-           System.out.println(f.getPath());
-           if (f.getName().endsWith("pdf")){
-               System.out.println(f.getName());
-               DefaultMutableTreeNode child = new DefaultMutableTreeNode();
-               node.add(child);
-           }
-       }
-       else {
-         System.out.println(f.getPath());
-         DefaultMutableTreeNode child = new DefaultMutableTreeNode(f);
-         node.add(child);
-         File fList[] = f.listFiles();
-         for(int i = 0; i  < fList.length; i++)
-             getList(child, fList[i]);
-         }
-    }
 }

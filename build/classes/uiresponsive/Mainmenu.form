@@ -150,7 +150,7 @@
     <Container class="javax.swing.JPanel" name="menu">
       <Properties>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[270, 450]"/>
+          <Dimension value="[50, 450]"/>
         </Property>
       </Properties>
       <Constraints>
